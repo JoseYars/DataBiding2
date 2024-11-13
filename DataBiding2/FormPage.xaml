@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DataBiding2.FormPage">
+    <StackLayout Padding="20">
+        <Entry x:Name="nombre" Placeholder="Nombre" />
+        <Entry x:Name="apellido" Placeholder="Apellido" />
+        <Entry x:Name="sexo" Placeholder="H o M" MaxLength="1"/>
+        <DatePicker x:Name="fh_nac"></DatePicker>
+        <Entry x:Name="idRol" Placeholder="ID de Rol" Keyboard="Numeric" />
+
+        <Button Text="Guardar Persona" Clicked="Button_Clicked"/>
+    </StackLayout>
+</ContentPage>

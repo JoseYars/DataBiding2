@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DataBiding2.MainPage"
+             BackgroundColor="Black">
+
+    <Grid>
+        <!-- Define las filas y columnas del Grid -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Botón ubicado en la primera fila y primera columna -->
+        <Button Text="Nueva Persona"
+                Grid.Row="0"
+                Grid.Column="0"
+                TextColor="White"
+                Clicked="Button_Clicked" />
+
+        <!-- CollectionView dentro del ScrollView en la segunda fila -->
+        <ScrollView Grid.Row="1">
+            <CollectionView ItemsSource="{Binding Personas}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <HorizontalStackLayout Spacing="10">
+                            <Label Text="{Binding nombre}" TextColor="White"/>
+                            <Label Text="{Binding apellido}" TextColor="White"/>
+                            <Label Text="{Binding sexo}" TextColor="White"/>
+                            <Label Text="{Binding fh_nac}" TextColor="White"/>
+                            <Label Text="{Binding RolDescripcion}" TextColor="White"/>
+                        </HorizontalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ScrollView>
+    </Grid>
+</ContentPage>
